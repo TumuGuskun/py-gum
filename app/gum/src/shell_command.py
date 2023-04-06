@@ -27,8 +27,14 @@ class ShellCommand:
     def add_flag(self, flag: str) -> None:
         self.flags.append(flag)
 
+    def add_flags(self, flags: list[str]) -> None:
+        self.flags.extend(flags)
+
     def add_key_value_arg(self, key: str, value: str) -> None:
         self.kv_args[key] = value
+
+    def add_key_value_args(self, kv_args: dict) -> None:
+        self.kv_args.update(kv_args)
 
     def add_command_args(self, *args: str) -> None:
         self.command_args.extend(args)
